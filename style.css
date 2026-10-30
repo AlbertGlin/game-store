@@ -1,0 +1,659 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe Ui', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0f0f1a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    padding: 80px 20px;
+}
+
+h2 {
+    font-size: 2.4rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #8a8aa0;
+    margin-bottom: 45px;
+    font-size: 1.05rem;
+}
+
+/* =====Шапка===== */
+
+header {
+    background: rgba(15, 15, 26, 0.95);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #1e1e30;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+nav {
+    display: flex; /*ОТОБРАЖЕНИЕ В ОДНУ СТРОЧКУ*/
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #b0b0c0;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #667eea;
+}
+
+/* =====Hero===== */
+
+/* ================= ГЕРОЙ ================= */
+
+.hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 100px 20px;
+}
+
+.hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-text > p {
+    font-size: 1.15rem;
+    color: #a0a0b0;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.tag {
+    display: inline-block;
+    background: rgba(102, 126, 234, 0.15);
+    color: #667eea;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stats strong {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.hero-stats span {
+    font-size: 0.85rem;
+    color: #8a8aa0;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.joystick-img {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    filter: drop-shadow(0 25px 50px rgba(102, 126, 234, 0.5));
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+
+/*=====Популярные игры=====*/
+
+.games-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.game-card {
+    background: #1a1a2e;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #1e1e30;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+    border-color: #667eea;
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+}
+
+.game-image {
+    height: 180px;
+    background: linear-gradient(135deg, #1e1e3a 0%, #2a2a4a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+}
+
+.game-info {
+    padding: 20px;
+}
+
+.game-info h3 {
+    color: #fff;
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+}
+
+.game-genre {
+    color: #8a8aa0;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.game-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rating {
+    color: #ffd700;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.price {
+    color: #667eea;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+/*=====Категории=====*/
+
+.categories-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.category {
+    background: #1a1a2e;
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #1e1e30;
+    cursor: pointer;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    border-color: #667eea;
+    background: #1e1e3a;
+}
+
+.category span {
+    font-size: 45px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.category h3 {
+    color: #fff;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.category p {
+    color: #8a8aa0;
+    font-size: 0.85rem;
+}
+
+/*=====Заголовок страницы=====*/
+
+.page-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16212e 100%);
+    padding: 60px 20px 50px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: #8a8aa0;
+    font-size: 1.1rem;
+}
+
+/*=====Игры(страница)=====*/
+
+.game-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+}
+
+/*=====Топ-10=====*/
+
+.top-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+}
+
+.top-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a2e;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.top-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    padding: 18px 20px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.top-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #1e1e30;
+    color: #c0c0d0;
+    font-size: 0.95rem;
+}
+
+.top-table tr:last-child td {
+    border-bottom: none;
+}
+
+.top-table tr:hover td {
+    background: #1e1e3a;
+    color: #fff;
+}
+
+.top-table td:first-child {
+    font-weight: 700;
+    color: #667eea;
+    font-size: 1.1rem;
+}
+
+/*=====Отзывы=====*/
+
+.reviews-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.review {
+    background: #1a1a2e;
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid #1e1e30;
+    transition: all 0.3s ease;
+}
+
+.review:hover {
+    border-color: #667eea;
+    transform: translateY(-5px);
+}
+
+.review-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.review-header strong {
+    color: #fff;
+    display: block;
+    font-size: 1rem;
+}
+
+.review-date {
+    color: #8a8aa0;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.stars {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.review p {
+    color: #b0b0c0;
+    font-size: 0.95rem;
+}
+
+/*=====Подписка=====*/
+
+.subscribe-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 60px 20px 80px;
+}
+
+.subscribe-form-box {
+    background: #1a1a2e;
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #1e1e30;
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.subscribe-form label {
+    color: #b0b0c0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.subscribe-form input [type="text"], 
+.subscribe-form input [type="email"],
+.subscribe-form select {
+    padding: 14px 18px;
+    background: #0f0f1a;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.subscribe-form input:focus,
+.subscribe-form select:focus {
+    background-color: #667eea;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #b0b0c0;
+    font-size: 0.95rem;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.checkbox input {
+    width: 18px;
+    height: 18px;
+    accent-color: #667eea;
+}
+
+.subscribe-form button {
+    padding: 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.subscribe-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+/*=====Подвал=====*/
+
+footer {
+    margin-top: auto;
+    background: #0a0a14;
+    text-align: center;
+    padding: 25px 20px;
+    color: #8a8aa0;
+    font-size: 0.9rem;
+    border-top: 1px solid #1e1e30;
+} 
+
+/* ================= АДАПТИВ ================= */
+
+@media (max-width: 768px) {
+
+    /* ----- ГЕРОЙ ----- */
+    .hero-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text > p {
+        margin: 0 auto 30px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+
+    .hero-image {
+        margin-top: 40px;
+    }
+
+    .joystick-img {
+        max-width: 300px;
+    }
+
+    /* ----- ШАПКА ----- */
+    .header-inner {
+        flex-direction: column;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    /* ----- ЗАГОЛОВКИ ----- */
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    /* ----- ТОП-10 ----- */
+    .top-table th,
+    .top-table td {
+        padding: 12px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* ----- ПОДПИСКА ----- */
+    .subscribe-form-box {
+        padding: 25px;
+    }
+
+}
+@media (max-width: 480px) {
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .joystick-img {
+        max-width: 220px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .hero-stats strong {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.7rem;
+    }
+
+}
